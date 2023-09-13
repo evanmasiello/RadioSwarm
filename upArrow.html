@@ -1,0 +1,63 @@
+<div class="scroll-top"><a class="back-to-top"><i id="myBtn" onclick="topFunction()" class="fa fa-arrow-up"></i></a></div>
+<style>
+#myBtn {
+  border: outset;
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 30px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  outline: none; /* Remove outline */
+  background-color: #54329a; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  /* background-color: black; Add a dark-grey background on hover */
+
+  background-color: #9b7fd5;
+  
+}
+
+/* <div class="scroll-top"> */
+</style>
+<script>
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  
+  scrollUp();
+  //document.body.scrollTop = 0; // For Safari
+  //document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  //document.getElementById("pageTitle").scrollIntoView();
+}
+
+function scrollUp() {
+    
+    if (document.documentElement.scrollTop > 1) {
+        document.documentElement.scrollTop = document.documentElement.scrollTop / 1.1;
+        
+        setTimeout(scrollUp, 10);
+    } else {
+        document.documentElement.scrollTop = 0;
+        console.log("done");
+    }
+}
+</script>

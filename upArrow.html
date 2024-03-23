@@ -1,4 +1,4 @@
-<div class="scroll-top"><a class="back-to-top"><i id="myBtn" onclick="topFunction()" class="fa fa-arrow-up"></i></a></div>
+<div class="scroll-top"><a href="#" class="back-to-top"><i id="myBtn" class="fa fa-arrow-up"></i></a></div>
 <style>
 #myBtn {
   border: outset;
@@ -42,22 +42,7 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  
-  scrollUp();
-  //document.body.scrollTop = 0; // For Safari
-  //document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  //document.getElementById("pageTitle").scrollIntoView();
-}
-
-function scrollUp() {
-    
-    if (document.documentElement.scrollTop > 1) {
-        document.documentElement.scrollTop = document.documentElement.scrollTop / 1.1;
-        
-        setTimeout(scrollUp, 10);
-    } else {
-        document.documentElement.scrollTop = 0;
-        console.log("done");
-    }
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>

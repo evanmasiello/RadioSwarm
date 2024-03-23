@@ -15,6 +15,7 @@
 <body>
 <?php include "heading.html" ?>
 <div class="contentBox">
+<br>
 <h2>Radio Swarm Stations</h2>
 <br>
 <br>
@@ -100,7 +101,7 @@ function populatTable() {
  for( var i = 0; i < stations.length; i++) {
   html += '<tr>';
  html += '<td>';
- html += "<a href='station?station=" + stations[i].id + "'>" + stations[i].id + "</a>";
+ html += "<a href='station.php?station=" + stations[i].id + "'>" + stations[i].id + "</a>";
  html += '</td>';
  html += '<td>';
   //console.log("title " + stations[i].title)
@@ -112,15 +113,15 @@ function populatTable() {
  html += '</td>';
   html += '<td>';
   //console.log("artist " + stations[i].artist)
-    html += "<a href='./user?user=" + users[stations[i].userID].user + "'> " + users[stations[i].userID].user + "</a>";
+    html += "<a href='./user.php?user=" + users[stations[i].userID].user + "'> " + users[stations[i].userID].user + "</a>";
  html += '</td>';
   html += '<td>';
   //console.log("artist " + stations[i].artist)
-  html += "<a href='./listen?station=" + stations[i].id + "'>Connect";
+  html += "<a href='./listen.php?station=" + stations[i].id + "'>Connect";
  html += '</td>';
   html += '<td>';
   //console.log("artist " + stations[i].artist)
-  html += "<a href='./edit-station?station=" + stations[i].id + "'>Edit";
+  html += "<a href='./edit-station.php?station=" + stations[i].id + "'>Edit";
  html += '</td>';
   html += '</tr>';
  }

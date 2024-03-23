@@ -1,10 +1,8 @@
 <?php
-
-    $allGood = false;
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST["rid"]) and isset($_POST["name"]) and isset($_POST["desc"]) and isset($_POST["uname"]) and isset($_POST["pword"]) and isset($_POST["shuff"]) and isset($_POST["songN1"]) and isset($_POST["songU1"]) and isset($_POST["songM1"]) and isset($_POST["songS1"]) and isset($_POST["oldID"]) and isset($_POST["songCount"])) {
         
-       #echo "in the if";
+        echo "in the if";
         
         $statusFile = "status.txt";
     
@@ -16,7 +14,7 @@
     
         file_put_contents($statusFile, "OPEN");
           
-       #echo "<h1>It worked</h1>";
+        echo "<h1>It worked</h1>";
           
         $canProceed = true;
           
@@ -78,7 +76,7 @@
             } else {
                 $canProceed = false;
                 
-               #echo "Password or user is not right";
+                echo "Password or user is not right";
             }
             
         }
@@ -98,7 +96,7 @@
             
               if ($stations[$i]->id == $rid or $stations[$i]->name == $name) {
                   
-               #echo "ID is already used";
+                echo "ID is already used";
                   
                 $canProceed = false;
               }
@@ -130,11 +128,9 @@
         $json = json_encode($stations);
     
         if($canProceed and file_put_contents($locationStations, $json)) {
-               #echo $file_nameStations .' file created';'
-            $allGood = true;
+                echo $file_nameStations .' file created';
         } else {
-           #echo 'There is some error';
-           $allGood = false;
+            echo 'There is some error';
         }
         
         $songN1 = $_POST["songN1"];
@@ -152,7 +148,7 @@
             )
         );
         
-       #echo "song count " . $songCount;
+        echo "song count " . $songCount;
         
         for ($j = 2; isset($_POST["songN" . $j]); $j++) {
             if (isset($_POST["songN" . $j]) and isset($_POST["songU" . $j]) and isset($_POST["songM" . $j]) and isset($_POST["songA" . $j]) and isset($_POST["songS" . $j]) ) {
@@ -173,27 +169,21 @@
         
         if($canProceed) {
             
-           #echo 'Can proceed for songs file';
+            echo 'Can proceed for songs file';
             
             if( file_put_contents("./songs/songs" . $rid . ".json", $songsJson)) {
-               #echo 'Created the songs file';
-               $allGood = true;
+                echo 'Created the songs file';
             } else {
-               #echo 'Songs file failed';
-               $allGood = false;
+                echo 'Songs file failed';
             }
         }
         
     }
     
-   #echo "can proceed status" . $canProceed;
+    echo "can proceed status" . $canProceed;
     
     file_put_contents($statusFile, "CLOSED");
     
-    if ($allGood) {
-       echo '<img src="good.png" style="width: 100%;">';
-    } else {
-       echo '<img src="bad.png" style="width: 100%;">';
-    }
+    echo "<h1>Hello User, </h1> <p>Welcome to Radio Swarm</p>";
     
 ?>

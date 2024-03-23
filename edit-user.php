@@ -23,7 +23,7 @@
 <br>
 <h2>Edit Your Account Information</h2>
 <br>
-<form id="changeName" method="post" action="./changeName.php" target="results">
+<form id="changeName" method="post" action="./changeName.php" target="_blank">
   <label for="uname">Username:</label><br>
   <input type="text" id="uname" name="uname"><br>
   <label for="pword">Password:</label><br>
@@ -33,7 +33,7 @@
   <input type="submit" value="Submit">
 </form> 
 <br>
-<form id="changePassword" method="post" action="./changePassword.php" target="results">
+<form id="changePassword" method="post" action="./changePassword.php" target="_blank">
   <label for="uname">Username:</label><br>
   <input type="text" id="uname" name="uname"><br>
   <label for="pword">Old Password:</label><br>
@@ -41,9 +41,7 @@
   <label for="pwordNew">New Password:</label><br>
   <input type="password" id="pwordNew" name="pwordNew"><br><br>
   <input type="submit" value="Submit">
-</form>
-<p>Results will be shown here:</p>
-<iframe id="results" name="results"></iframe>
+</form> 
 </div>
 <?php include "upArrow.html" ?>
 </body>

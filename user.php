@@ -18,10 +18,10 @@
 <br>
 <h2>Radio Swarm User</h2>
 <br>
-<form id="viewUser" method="get" action="user">
+<form id="viewUser" method="get" action="user.php">
 <input id="inputUser" name="user" type="text" placeholder="Username"> <input type="submit" value="View">
 </form>
-<h3><a href="./edit-user">Edit Account</a></h3>
+<h3><a href="./edit-user.php">Edit Account</a></h3>
 <br>
 <h2>Name: <span id="uName"></span></h2>
 <h4>Date Joined: <span id="uDate"></span></h4>
@@ -182,7 +182,7 @@ document.getElementById("uDate").innerHTML = dateString.substring(0, dateString.
  for( var i = 0; i < userStations.length; i++) {
   html += '<tr>';
  html += '<td>';
- html += "<a href='station?station=" + userStations[i].id + "'>" + userStations[i].id + "</a>";
+ html += "<a href='station.php?station=" + userStations[i].id + "'>" + userStations[i].id + "</a>";
  html += '</td>';
  html += '<td>';
   //console.log("title " + stations[i].title)
@@ -194,11 +194,11 @@ document.getElementById("uDate").innerHTML = dateString.substring(0, dateString.
  html += '</td>';
   html += '<td>';
   //console.log("artist " + stations[i].artist)
-  html += "<a href='./listen?station=" + userStations[i].id + "'>Connect";
+  html += "<a href='./listen.php?station=" + userStations[i].id + "'>Connect";
  html += '</td>';
   html += '<td>';
   //console.log("artist " + stations[i].artist)
-  html += "<a href='./edit-station?station=" + userStations[i].id + "'>Edit";
+  html += "<a href='./edit-station.php?station=" + userStations[i].id + "'>Edit";
  html += '</td>';
   html += '</tr>';
  }

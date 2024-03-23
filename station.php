@@ -18,7 +18,7 @@
 <br>
 <h2>Radio Swarm Stations</h2>
 <br>
-<form id="editStation" method="get" action="station">
+<form id="editStation" method="get" action="station.php">
 <input id="inputNum" name="station" type="number" value="0" onchange="changeNum()"> <input type="submit" value="View">
 </form>
 <br>
@@ -155,10 +155,10 @@ for (var i=0; i < stations.length; i++) {
 
 document.getElementById("sName").innerHTML = station.name;
 document.getElementById("sDesc").innerHTML = station.desc;
-document.getElementById("sUser").innerHTML = "<a href='./user?user=" + users[station.userID].user + "'> " + users[station.userID].user + "</a>";
+document.getElementById("sUser").innerHTML = "<a href='./user.php?user=" + users[station.userID].user + "'> " + users[station.userID].user + "</a>";
 
-document.getElementById("listenLink").href = "listen?station=" + station.id;
-document.getElementById("editLink").href = "edit-station?station=" + station.id;
+document.getElementById("listenLink").href = "listen.php?station=" + station.id;
+document.getElementById("editLink").href = "edit-station.php?station=" + station.id;
     
  var html = "";
  html += '<tr>';

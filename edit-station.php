@@ -16,7 +16,7 @@
 <?php include "heading.html" ?>
 <div class="contentBox">
 <br>
-<form id="editStation" method="get" action="edit-station">
+<form id="editStation" method="get" action="edit-station.php">
 <input id="inputNum" name="station" type="number" value="0" onchange="changeNum()"> <input type="submit" value="Edit">
 </form>
 <br>

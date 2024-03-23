@@ -18,7 +18,7 @@
 <br>
 <h2>Radio Swarm Users</h2>
 <br>
-<a href="edit-user"><h4>Edit Account</h4></a>
+<a href="edit-user.php"><h4>Edit Account</h4></a>
 <br>
 <h2>Here are all of our users:</h2>
 <table id="usersTable">
@@ -104,7 +104,7 @@ function populatTable() {
   html += '<tr>';
  html += '<td>';
   //console.log("title " + stations[i].title)
-  html += "<a href='./user?user=" + users[i].user + "'> " + users[i].user + "</a>";
+  html += "<a href='./user.php?user=" + users[i].user + "'> " + users[i].user + "</a>";
  html += '</td>';
  html += '<td>';
   //console.log("artist " + stations[i].artist)
@@ -115,7 +115,7 @@ function populatTable() {
   for (var x=0; x < stations.length; x++) {
       if (stations[x].userID == users[i].id) {
         //stationsArr.push(stations[x]);
-        stationsString += " - <a href='./station?station=" + stations[x].id + "'>" + stations[x].name + "</a>";
+        stationsString += " - <a href='./station.php?station=" + stations[x].id + "'>" + stations[x].name + "</a>";
       }
   }
   

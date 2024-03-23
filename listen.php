@@ -18,32 +18,28 @@
 <br>
 <h2>Listen to a radio station</h2>
 
-<form id="newStation" method="get" action="listen">
+<form id="newStation" method="get" action="listen.php">
 <input id="inputNum" name="station" type="number" value="0" onchange="changeNum()"> <input type="submit" value="Connect">
 </form>
 
 <br><br>
 
-<h3>Connected to: <a id="stationTitle"></span></h3>
+<h3>Connected to: <span id="stationTitle"></span></h3>
 <h4>About: <span id="stationDesc"></span></h4>
-<h4>By: <a id="stationOwner"></span></h4>
+<h4>By: <span id="stationOwner"></span></h4>
 
 <br><br>
-<div id="playerContain">
 <div id="player">
 <iframe id="ytVid" width="560" height="315" src="https://www.youtube.com/embed/r90xDchufXE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-</div>
 <br>
-<div id="playerControl">
-<div id="volumeBar" style="width: 75%; margin-left: 12.5%;">
-<input id="volSlider" class="range-slider" type="range" min="0" max="100" value="100" style="" oninput="valueChanged(this)"><i id="volIcon" class="fa fa-volume-up" style="font-size: 18px;"></i>
+<div id="volumeBar" style="width: 50vw;">
+<input id="volSlider" class="range-slider" type="range" min="0" max="100" value="100" style="" oninput="valueChanged(this)"><i id="volIcon" class="fa fa-volume-up"></i>
 </div>
 <br>
 
 <h3>Listening to: <span id="title"></span></h3>
 <h4>By: <span id="artist"></span></h4>
-</div>
 </div>
 <script>
 
@@ -272,7 +268,7 @@ function changeNum() {
     
     //window.location.search = urlParams.toString();
     
-    document.getElementById("newStation").action = "listen";
+    document.getElementById("newStation").action = "listen.php";
     
     console.log("changing num");
 }
@@ -318,9 +314,7 @@ function updateDisplay(id) {
     var user = users[stationCurrent.userID];
     
     document.getElementById("stationTitle").innerHTML = stationCurrent.name;
-    document.getElementById("stationTitle").href = "./station?station=" + stationCurrent.id;
     document.getElementById("stationDesc").innerHTML = stationCurrent.desc;
-    document.getElementById("stationOwner").href = "./user?user=" + user.user;
     document.getElementById("stationOwner").innerHTML = user.user;
 
 }

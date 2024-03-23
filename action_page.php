@@ -1,7 +1,5 @@
 <?php
     
-    $allGood = false;
-    
     if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST["rid"]) and isset($_POST["name"]) and isset($_POST["desc"]) and isset($_POST["uname"]) and isset($_POST["pword"]) and isset($_POST["shuff"]) and isset($_POST["songN1"]) and isset($_POST["songU1"]) and isset($_POST["songM1"]) and isset($_POST["songS1"]) and isset($_POST["songCount"])) {
         
         $statusFile = "status.txt";
@@ -135,19 +133,15 @@
         $json = json_encode($stations);
     
         if($canProceed and file_put_contents($locationStations, $json)) {
-                #echo $file_nameStations .' file created';
-                $allGood = true;
+                echo $file_nameStations .' file created';
         } else {
-           #echo 'There is some error';
-           $allGood = false;
+            echo 'There is some error';
         }
         
         if($canProceed and file_put_contents($locationUsers, $jsonUsers)) {
-           #echo $file_nameUsers .' file created';
-           $allGood = true;
+            echo $file_nameUsers .' file created';
         } else {
-           #echo 'There is some error';
-           $allGood = false;
+            echo 'There is some error';
         }
         
         $songN1 = $_POST["songN1"];
@@ -184,20 +178,12 @@
         
         if($canProceed) {
             if( file_put_contents("./songs/songs" . $rid . ".json", $songsJson)) {
-               #echo 'Created the songs file';
-               $allGood = true;
+                echo 'Created the songs file';
             } else {
-               #echo 'Songs file failed';
-               $allGood = false;
+                echo 'Songs file failed';
             }
         }
         
-    }
-    
-    if ($allGood) {
-        echo '<img src="good.png" style="width: 100%;">';
-    } else {
-        echo '<img src="bad.png" style="width: 100%;">';
     }
     
     file_put_contents($statusFile, "CLOSED");
